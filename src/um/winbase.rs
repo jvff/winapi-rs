@@ -2063,8 +2063,24 @@ extern "system" {
         lpsz: LPCWSTR,
         ucchMax: UINT_PTR
     ) -> BOOL;
-    // pub fn LookupAccountSidA();
-    // pub fn LookupAccountSidW();
+    pub fn LookupAccountSidA(
+        lpSystemName: LPCSTR,
+        lpSid: PSID,
+        lpName: LPSTR,
+        cchName: LPDWORD,
+        lpReferencedDomainName: LPSTR,
+        cchReferencedDomainName: LPDWORD,
+        peUse: PSID_NAME_USE,
+    ) -> BOOL;
+    pub fn LookupAccountSidW(
+        lpSystemName: LPWSTR,
+        lpSid: PSID,
+        lpName: LPSTR,
+        cchName: LPDWORD,
+        lpReferencedDomainName: LPSTR,
+        cchReferencedDomainName: LPDWORD,
+        peUse: PSID_NAME_USE,
+    ) -> BOOL;
     pub fn LookupAccountNameA(
         lpSystemName: LPCSTR,
         lpAccountName: LPCSTR,
